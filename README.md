@@ -20,8 +20,8 @@ Your task is to:
    is indicated in a comment, like "I'm working on this task.". 
    * If there's no issue without an implementor, you can pick one of the
      already picked. Just add another comment like above.
-1. Fork the repository (button in the upper right corner of the main page).
-1. On the fork, create a feature branch with a name following a convention:
+1. **Fork the repository** (button in the upper right corner of the main page).
+1. **On the fork**, create a feature branch with a name following a convention:
    ```
    issueID-short-but-meaningful-description-written-in-kebab-case
    ```
@@ -30,8 +30,8 @@ Your task is to:
    999-implement-realtime-interaction
    ```
    (Don't put `#` in the name of the branch)
-1. implement the feature,
-1. push the changes to a remote feature branch on your fork,
+1. implement the feature **on your fork**,
+1. push the changes to a remote feature branch **on your fork**,
 1. create a Pull Request to merge it to `EPAM-Online-Courses/tetris:master`.
 
 ## Rules
