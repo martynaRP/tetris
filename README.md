@@ -29,10 +29,10 @@ Your task is to:
    ```
    999-implement-realtime-interaction
    ```
-   (Don't put `#` in the name of the branch)
-1. implement the feature **on your fork**,
-1. push the changes to a remote feature branch **on your fork**,
-1. create a Pull Request to merge it to `EPAM-Online-Courses/tetris:master`.
+   (Don't put `#` in the name of the branch.)
+1. Implement the feature **on your fork**.
+1. Push the changes to a remote feature branch **on your fork**.
+1. Create a Pull Request to merge it to `EPAM-Online-Courses/tetris:master`.
 
 ## Rules
 
