@@ -34,11 +34,18 @@ Your task is to:
 1. Push the changes to a remote feature branch **on your fork**.
 1. Create a Pull Request to merge it to `EPAM-Online-Courses/tetris:master`.
 
+**IMPORTANT!**
+
+YOU WILL NOW BE WORKING ON THE FORKED REPO, NOT ON THIS ONE, BUT ON YOUR GITHUB
+COPY OF IT, CALLED THE FORK. WE REPEAT, YOU WILL NOW BE WORKING ON THE FORK.
+
+Commands and task steps to do ON THE FORK. It's to be done ON THE FORK, ok?
+NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
+
 ## Rules
 
 1. Your implementation shall not break any of the existing functionalities.
-1. The solution shall be delivered in the form of self-contained commits.
-   Each commit contains:
+1. Each single commit shall contain:
    
    * a consistent, working set of changes,
    * a set of tests that prove the changes actually work,
