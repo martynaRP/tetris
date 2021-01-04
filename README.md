@@ -4,7 +4,17 @@
 
 This repository contains a basic implementation of a Tetris-like game.
 It currently lacks many features of the original game, some of which
-are described in the issues. Your task is to:
+are described in the issues.
+
+**IMPORTANT**: Currently, the game is entirely automated - there's no
+realtime interaction with the user. Instead, the moves are generated
+randomly. While you may be tempted to do a research on how to read a single
+key from the keyboard, it's not an easy thing in Java (usually involving
+native methods), so probably there are better things to do first ;-)
+
+## Task
+
+Your task is to:
 
 1. Pick an issue that doesn't have an implementor yet. An implementor here
    is indicated in a comment, like "I'm working on this task.". 
@@ -15,6 +25,11 @@ are described in the issues. Your task is to:
    ```
    issueID-short-but-meaningful-description-written-in-kebab-case
    ```
+   For example:
+   ```
+   999-implement-realtime-interaction
+   ```
+   (Don't put `#` in the name of the branch)
 1. implement the feature,
 1. push the changes to a remote feature branch on your fork,
 1. create a Pull Request to merge it to `EPAM-Online-Courses/tetris:master`.
@@ -34,3 +49,4 @@ are described in the issues. Your task is to:
    of resolving the issue. Too wide, especially unrelated changes may cause
    the PR to be rejected.
 1. Feel free to add missing tests and Javadocs.
+   * It might require creating a proper directory structure for the test classes.
