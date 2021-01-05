@@ -8,9 +8,12 @@ public class RandomPlayer implements Player {
 
     private final Random random = new Random();
 
+    /** Generates random move for Player from all available defined in Move enum
+     * @return Optional with Move value
+     */
     @Override
     public Optional<Move> nextMove() {
-        return Optional.of(Move.values()[random.nextInt(Move.values().length - 1)]);
+        return Optional.of(Move.values()[random.nextInt(Move.values().length)]);
     }
 
 }
