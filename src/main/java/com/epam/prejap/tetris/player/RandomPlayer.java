@@ -6,7 +6,11 @@ import java.util.Random;
 
 public class RandomPlayer implements Player {
 
-    private final Random random = new Random();
+    private final Random random ;
+
+    public RandomPlayer(Random random){
+        this.random=random;
+    }
 
     /** Generates random move for Player from all available defined in Move enum
      * @return Optional with Move value
