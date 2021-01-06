@@ -3,16 +3,19 @@ package com.epam.prejap.tetris.player;
 import com.epam.prejap.tetris.game.Move;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import java.util.Random;
+
 import static org.testng.Assert.*;
 
 @Test(groups = "Player")
 public class RandomPlayerTest {
 
-    class MockRandom extends Random{
+    class MockRandom extends Random {
         private final int mockRandomInt;
-        MockRandom(int mockRandomInt){
-            this.mockRandomInt=mockRandomInt;
+
+        MockRandom(int mockRandomInt) {
+            this.mockRandomInt = mockRandomInt;
         }
 
         @Override
@@ -22,18 +25,17 @@ public class RandomPlayerTest {
     }
 
     @DataProvider
-    public Object[] allMoveEnumValues(){
+    public Object[] allMoveEnumValues() {
         return Move.values();
     }
 
-
-    @Test( dataProvider = "allMoveEnumValues")
+    @Test(dataProvider = "allMoveEnumValues")
     public void nextMoveShouldGenerateEachPossibleValue(Move expectedMove) {
         Random mockRandom = new MockRandom(expectedMove.ordinal());
-        RandomPlayer testingRandomizer=new RandomPlayer(mockRandom);;
+        RandomPlayer testingRandomizer = new RandomPlayer(mockRandom);
 
         var actualMove = testingRandomizer.nextMove().get();
 
-        assertEquals(actualMove,expectedMove);
+        assertEquals(actualMove, expectedMove);
     }
 }
