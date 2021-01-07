@@ -21,9 +21,18 @@ public class CommandLineAnalyst {
         if (args.length == numberOfNavigationKeys) {
             char[] keys = arg0.replaceAll("\\s", "").toCharArray();
             if (keys.length == numberOfNavigationKeys) {
-                return keys;
+                if (distinctValuesForNavigationKeys(keys)) {
+                    return keys;
+                } else throw new IllegalArgumentException("Each navigation key should be represented by a " +
+                        "different character");
             } else throw new IllegalArgumentException("Each navigation key should be represented by a single " +
                     "character.");
         } else throw new IllegalArgumentException("Incorrect amount of values provided for navigation keys.");
+    }
+
+    private static boolean distinctValuesForNavigationKeys(char[] keys) {
+        String keysAsString = new String(keys);
+        long distinctCount = keysAsString.chars().distinct().count();
+        return keys.length == distinctCount;
     }
 }
