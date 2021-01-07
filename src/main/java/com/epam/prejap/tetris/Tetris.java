@@ -44,6 +44,14 @@ class Tetris {
         return new Score(score);
     }
 
+    /**
+     * Prepares the environment and launches the game
+     *
+     * @param args  array of strings input from the command line
+     *              args[0] dedicated to configure custom navigation keys
+     *                      each key should be represented by a single character and separated by space
+     *                      input example: "q s d" -> none: q, left: s, right: d
+     */
     public static void main(String[] args) {
         int rows = 10;
         int cols = 20;

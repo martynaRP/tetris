@@ -2,8 +2,19 @@ package com.epam.prejap.tetris.analyst;
 
 import com.epam.prejap.tetris.game.Move;
 
+/**
+ * Analyses the command-line input
+ * @author Martyna Rucińska Pereira
+ */
 public class CommandLineAnalyst {
 
+    /**
+     * Analyses the first string input from the command line
+     * Checks if custom configuration for navigation keys was provided, if so, modifies them
+     *
+     * @param arg0  first string input from the command line
+     * @return      navigation keys
+     */
     public static char[] checkArgsForNavigationKeys(String arg0) {
         char[] keys = Move.defaultKeys();
         if (arg0 != null && !arg0.isBlank()) {

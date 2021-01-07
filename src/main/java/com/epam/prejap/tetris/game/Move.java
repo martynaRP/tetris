@@ -2,6 +2,9 @@ package com.epam.prejap.tetris.game;
 
 import java.util.Arrays;
 
+/**
+ * Stores moves available in the game with the keys that are used to perform each move
+ */
 public enum Move {
 
     NONE(defaultKeys()[0]),
@@ -24,10 +27,20 @@ public enum Move {
         return NONE;
     }
 
+    /**
+     * Provides a set of default navigation keys
+     * @return array of navigation keys for all moves
+     */
     public static char[] defaultKeys() {
         return new char[]{' ', 'h', 'l'};
     }
 
+    /**
+     * Modifies navigation keys
+     * Replaces default setting with custom navigation keys
+     * @param keys  custom configuration
+     * @return      modified navigation keys
+     */
     public static char[] modifyNavigationKeys(char[] keys) {
         Arrays.stream(values()).forEach(val -> val.key = keys[val.ordinal()]);
         return Move.getNavigationKeys();
@@ -39,6 +52,10 @@ public enum Move {
         return navigationKeys;
     }
 
+    /**
+     * Provides current configuration of navigation keys
+     * @return string representation of moves and associated keys
+     */
     public static String navigationKeysConfiguration() {
         return Arrays.deepToString(Arrays.stream(values())
                 .map(val -> "" + val + ": " + (char) val.key).toArray());
