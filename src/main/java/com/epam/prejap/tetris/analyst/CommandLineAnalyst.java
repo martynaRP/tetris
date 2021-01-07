@@ -1,5 +1,29 @@
 package com.epam.prejap.tetris.analyst;
 
+import com.epam.prejap.tetris.game.Move;
+
 public class CommandLineAnalyst {
 
+    public static char[] checkArgsForNavigationKeys(String arg0) {
+        char[] keys = Move.defaultKeys();
+        if (arg0 != null && !arg0.isBlank()) {
+            char[] customKeys = transformArgToKeys(arg0);
+            keys = Move.modifyNavigationKeys(customKeys);
+            System.out.println("Custom navigation keys configured with success: \n" +
+                    Move.navigationKeysConfiguration());
+        }
+        return keys;
+    }
+
+    private static char[] transformArgToKeys(String arg0) {
+        String[] args = arg0.replaceAll("\\s+", " ").trim().split(" ");
+        final int numberOfNavigationKeys = Move.values().length;
+        if (args.length == numberOfNavigationKeys) {
+            char[] keys = arg0.replaceAll("\\s", "").toCharArray();
+            if (keys.length == numberOfNavigationKeys) {
+                return keys;
+            } else throw new IllegalArgumentException("Each navigation key should be represented by a single " +
+                    "character.");
+        } else throw new IllegalArgumentException("Incorrect amount of values provided for navigation keys.");
+    }
 }
