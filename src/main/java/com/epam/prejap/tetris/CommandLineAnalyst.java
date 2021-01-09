@@ -16,14 +16,14 @@ class CommandLineAnalyst {
      * @return      navigation keys
      */
     public static char[] checkArgsForNavigationKeys(String arg0) {
-        char[] keys = Move.defaultKeys();
-        if (arg0 != null && !arg0.isBlank()) {
-            char[] customKeys = transformArgToKeys(arg0);
-            keys = Move.modifyNavigationKeys(customKeys);
-            System.out.println("Custom navigation keys configured with success: \n" +
-                    Move.navigationKeysConfiguration());
+        if (arg0 == null || arg0.isBlank()) {
+            return Move.defaultKeys();
         }
-        return keys;
+        char[] providedKeys = transformArgToKeys(arg0);
+        char[] customKeys = Move.modifyNavigationKeys(providedKeys);
+        System.out.println("Custom navigation keys configured with success: \n" +
+            Move.navigationKeysConfiguration());
+        return customKeys;
     }
 
     private static char[] transformArgToKeys(String arg0) {
