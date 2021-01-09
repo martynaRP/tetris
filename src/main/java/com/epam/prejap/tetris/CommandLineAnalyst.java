@@ -29,16 +29,14 @@ class CommandLineAnalyst {
     private static char[] transformArgToKeys(String arg0) {
         String[] args = arg0.replaceAll("\\s+", " ").trim().split(" ");
         final int numberOfNavigationKeys = Move.values().length;
-        if (args.length == numberOfNavigationKeys) {
-            char[] keys = arg0.replaceAll("\\s", "").toCharArray();
-            if (keys.length == numberOfNavigationKeys) {
-                if (distinctValuesForNavigationKeys(keys)) {
-                    return keys;
-                } else throw new IllegalArgumentException("Each navigation key should be represented by a " +
-                        "different character");
-            } else throw new IllegalArgumentException("Each navigation key should be represented by a single " +
-                    "character.");
-        } else throw new IllegalArgumentException("Incorrect amount of values provided for navigation keys.");
+        if (args.length != numberOfNavigationKeys)
+            throw new IllegalArgumentException("Incorrect amount of values provided for navigation keys.");
+        char[] keys = arg0.replaceAll("\\s", "").toCharArray();
+        if (keys.length != numberOfNavigationKeys)
+            throw new IllegalArgumentException("Each navigation key should be represented by a single character.");
+        if (!distinctValuesForNavigationKeys(keys))
+            throw new IllegalArgumentException("Each navigation key should be represented by a different character");
+        return keys;
     }
 
     private static boolean distinctValuesForNavigationKeys(char[] keys) {
