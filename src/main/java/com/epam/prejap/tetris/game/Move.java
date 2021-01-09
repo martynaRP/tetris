@@ -13,6 +13,7 @@ public enum Move {
     ;
 
     private int key;
+    private static char[] currentKeys = defaultKeys();
 
     Move(int key) {
         this.key = key;
@@ -43,13 +44,8 @@ public enum Move {
      */
     public static char[] modifyNavigationKeys(char[] keys) {
         Arrays.stream(values()).forEach(val -> val.key = keys[val.ordinal()]);
-        return Move.getNavigationKeys();
-    }
-
-    private static char[] getNavigationKeys() {
-        char[] navigationKeys = new char[values().length];
-        Arrays.stream(values()).forEach(val -> navigationKeys[val.ordinal()] = (char) val.key);
-        return navigationKeys;
+        currentKeys = keys;
+        return currentKeys;
     }
 
     /**
