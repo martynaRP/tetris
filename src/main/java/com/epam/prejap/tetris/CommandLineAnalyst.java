@@ -1,4 +1,4 @@
-package com.epam.prejap.tetris.analyst;
+package com.epam.prejap.tetris;
 
 import com.epam.prejap.tetris.game.Move;
 
@@ -6,7 +6,7 @@ import com.epam.prejap.tetris.game.Move;
  * Analyses the command-line input
  * @author Martyna Rucińska Pereira
  */
-public class CommandLineAnalyst {
+class CommandLineAnalyst {
 
     /**
      * Analyses the first string input from the command line

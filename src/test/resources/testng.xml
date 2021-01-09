@@ -19,7 +19,7 @@
             <class name="com.epam.prejap.tetris.block.BlockFeedTest"/>
             <class name="com.epam.prejap.tetris.player.RandomPlayerTest"/>
             <class name="com.epam.prejap.tetris.game.MoveTest"/>
-            <class name="com.epam.prejap.tetris.analyst.CommandLineAnalyst"/>
+            <class name="com.epam.prejap.tetris.CommandLineAnalyst"/>
         </classes>
     </test>
 </suite>

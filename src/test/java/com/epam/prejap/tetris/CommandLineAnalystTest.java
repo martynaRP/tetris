@@ -1,4 +1,4 @@
-package com.epam.prejap.tetris.analyst;
+package com.epam.prejap.tetris;
 
 import com.epam.prejap.tetris.game.Move;
 import org.testng.annotations.DataProvider;
