@@ -19,6 +19,11 @@ public enum Move {
         this.key = key;
     }
 
+    /**
+     * Provides a Move based on the input key.
+     * @param key   integer value of a key
+     * @return the move associated with a provided key or NONE if no such key was found
+     */
     public static Move of(int key) {
         for (var move : values()) {
             if (move.key == key) {
