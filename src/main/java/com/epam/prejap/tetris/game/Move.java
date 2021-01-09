@@ -53,7 +53,11 @@ public enum Move {
      * @return string representation of moves and associated keys
      */
     public static String navigationKeysConfiguration() {
-        return Arrays.deepToString(Arrays.stream(values())
-                .map(val -> "" + val + ": " + (char) val.key).toArray());
+        return Arrays.deepToString(Arrays.stream(values()).map(Move::toString).toArray());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ": " + (char) this.key;
     }
 }
