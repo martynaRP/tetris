@@ -2,8 +2,7 @@ package com.epam.prejap.tetris.game;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
+import org.testng.asserts.SoftAssert;
 
 @Test(groups = "Game")
 public class MoveTest {
@@ -17,7 +16,11 @@ public class MoveTest {
         char[] actualKeys = Move.modifyNavigationKeys(providedKeys);
 
         //then
-        assertNotEquals(actualKeys, defaultKeys, "Navigation keys should be configurable but are not.");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertNotEquals(actualKeys, defaultKeys);
+        softAssert.assertNotEquals(Move.of(defaultKeys[1]), Move.LEFT);
+        softAssert.assertNotEquals(Move.of(defaultKeys[2]), Move.RIGHT);
+        softAssert.assertAll("Navigation keys should have been configured but were not and are still default.");
     }
 
     @Test(dataProvider = "keys")
@@ -28,8 +31,12 @@ public class MoveTest {
         char[] actualKeys = Move.modifyNavigationKeys(providedKeys);
 
         //then
-        assertEquals(actualKeys, providedKeys, "Navigation keys should have been modified to provided ones but" +
-                " were not.");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualKeys, providedKeys);
+        softAssert.assertEquals(Move.of(actualKeys[0]), Move.NONE);
+        softAssert.assertEquals(Move.of(actualKeys[1]), Move.LEFT);
+        softAssert.assertEquals(Move.of(actualKeys[2]), Move.RIGHT);
+        softAssert.assertAll("Navigation keys should have been modified to provided ones but were not.");
     }
 
     @DataProvider
