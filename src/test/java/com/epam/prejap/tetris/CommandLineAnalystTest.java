@@ -6,18 +6,18 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-@Test(groups = "CommandLineAnalyst")
+@Test(groups = "NavigationKeys")
 public class CommandLineAnalystTest {
 
     @DataProvider
-    public static Object[] correctInput() {
+    public static Object[] inputWithExactly3Characters() {
         return new Object[]{
                 "q s d",
                 " a   z      g  "
         };
     }
 
-    @Test(dataProvider = "correctInput")
+    @Test(dataProvider = "inputWithExactly3Characters")
     public void userCanModifyDefaultNavigationKeysProviding3CharactersSeparatedBySpaces(String input){
         //given
         char[] providedKeys = extractKeysFromInput(input);
@@ -67,7 +67,6 @@ public class CommandLineAnalystTest {
         };
     }
 
-    //    @Test(dataProvider = "incorrectAmountOfValues")
     @Test(
             dataProvider = "incorrectAmountOfValues",
             expectedExceptions = IllegalArgumentException.class,
@@ -108,7 +107,7 @@ public class CommandLineAnalystTest {
     @Test(
             dataProvider = "inputWithRepeatingKeys",
             expectedExceptions = IllegalArgumentException.class,
-            expectedExceptionsMessageRegExp = "Each navigation key should be represented by a different character"
+            expectedExceptionsMessageRegExp = "Each navigation key should be represented by a different character."
     )
     public void programThrowsExceptionWhenInputWithRepeatingKeysProvided(String input) {
         CommandLineAnalyst.checkArgsForNavigationKeys(input);

@@ -35,7 +35,7 @@ class CommandLineAnalyst {
         if (keys.length != numberOfNavigationKeys)
             throw new IllegalArgumentException("Each navigation key should be represented by a single character.");
         if (!distinctValuesForNavigationKeys(keys))
-            throw new IllegalArgumentException("Each navigation key should be represented by a different character");
+            throw new IllegalArgumentException("Each navigation key should be represented by a different character.");
         return keys;
     }
 

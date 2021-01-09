@@ -10,8 +10,7 @@
             <run>
                 <include name="Block"/>
                 <include name="Player"/>
-                <include name="Game"/>
-                <include name="CommandLineAnalyst"/>
+                <include name="NavigationKeys"/>
                 <include name="Timer"/>
             </run>
         </groups>
@@ -20,7 +19,7 @@
             <class name="com.epam.prejap.tetris.block.BlockFeedTest"/>
             <class name="com.epam.prejap.tetris.player.RandomPlayerTest"/>
             <class name="com.epam.prejap.tetris.game.MoveTest"/>
-            <class name="com.epam.prejap.tetris.CommandLineAnalyst"/>
+            <class name="com.epam.prejap.tetris.CommandLineAnalystTest"/>
             <class name="com.epam.prejap.tetris.game.PrinterTest"/>
             <class name="com.epam.prejap.tetris.game.TimerTest"/>
         </classes>
