@@ -3,14 +3,14 @@ package com.epam.prejap.tetris;
 import com.epam.prejap.tetris.game.Move;
 
 /**
- * Analyses the command-line input
+ * Analyses the command-line input.
  * @author Martyna Rucińska Pereira
  */
 class CommandLineAnalyst {
 
     /**
-     * Analyses the first string input from the command line
-     * Checks if custom configuration for navigation keys was provided, if so, modifies them
+     * Analyses the first string input from the command line.
+     * Checks if custom configuration for navigation keys was provided, if so, modifies them.
      *
      * @param arg0  first string input from the command line
      * @return      navigation keys

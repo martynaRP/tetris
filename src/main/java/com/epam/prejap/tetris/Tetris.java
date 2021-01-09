@@ -1,6 +1,5 @@
 package com.epam.prejap.tetris;
 
-import com.epam.prejap.tetris.analyst.CommandLineAnalyst;
 import com.epam.prejap.tetris.block.BlockFeed;
 import com.epam.prejap.tetris.game.Move;
 import com.epam.prejap.tetris.game.Playfield;
@@ -45,12 +44,17 @@ class Tetris {
     }
 
     /**
-     * Prepares the environment and launches the game
+     * Prepares the environment and launches the game.
      *
      * @param args  array of strings input from the command line
-     *              args[0] dedicated to configure custom navigation keys
-     *                      each key should be represented by a single character and separated by space
-     *                      input example: "q s d" -> none: q, left: s, right: d
+     *              <ul>
+     *                  <li>args[0] is dedicated to configuring custom navigation keys</li>
+     *                  <ul>
+     *                      <li>each key should be represented by a single character and separated by space</li>
+     *                      <li>input example: "q s d" -> none: q, left: s, right: d</li>
+     *                  </ul>
+     *              </ul>
+     * @see CommandLineAnalyst#checkArgsForNavigationKeys(String)
      */
     public static void main(String[] args) {
         int rows = 10;
