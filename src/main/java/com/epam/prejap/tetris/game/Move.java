@@ -7,16 +7,20 @@ import java.util.Arrays;
  */
 public enum Move {
 
-    NONE(defaultKeys()[0]),
-    LEFT(defaultKeys()[1]),
-    RIGHT(defaultKeys()[2]),
+    NONE(' '),
+    LEFT('h'),
+    RIGHT('l'),
     ;
 
     private int key;
-    private static char[] currentKeys = defaultKeys();
+    private final char defaultKey;
 
-    Move(int key) {
-        this.key = key;
+    public static final char[] DEFAULT_KEYS = new char[]{NONE.defaultKey, LEFT.defaultKey, RIGHT.defaultKey};
+    private static char[] currentKeys = DEFAULT_KEYS;
+
+    Move(char defaultKey) {
+        this.defaultKey = defaultKey;
+        this.key = defaultKey;
     }
 
     /**
@@ -31,14 +35,6 @@ public enum Move {
             }
         }
         return NONE;
-    }
-
-    /**
-     * Provides a set of default navigation keys.
-     * @return array of navigation keys for all moves
-     */
-    public static char[] defaultKeys() {
-        return new char[]{' ', 'h', 'l'};
     }
 
     /**

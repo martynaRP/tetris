@@ -17,7 +17,7 @@ class CommandLineAnalyst {
      */
     public static char[] checkArgsForNavigationKeys(String arg0) {
         if (arg0 == null || arg0.isBlank()) {
-            return Move.defaultKeys();
+            return Move.DEFAULT_KEYS;
         }
         char[] providedKeys = transformArgToKeys(arg0);
         char[] customKeys = Move.modifyNavigationKeys(providedKeys);

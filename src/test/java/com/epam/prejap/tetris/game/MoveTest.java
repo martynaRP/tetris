@@ -10,7 +10,7 @@ public class MoveTest {
     @Test(dataProvider = "keys")
     public void navigationKeysShouldBeConfigurable(char[] providedKeys) {
         //given
-        char[] defaultKeys = Move.defaultKeys();
+        char[] defaultKeys = Move.DEFAULT_KEYS;
 
         //when
         char[] actualKeys = Move.modifyNavigationKeys(providedKeys);

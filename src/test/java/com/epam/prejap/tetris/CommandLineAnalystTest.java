@@ -48,7 +48,7 @@ public class CommandLineAnalystTest {
     @Test(dataProvider = "nullOrBlankArgument")
     public void gameContinuesWithDefaultKeysIfNoOrBlankArgumentProvided(String input) {
         //given
-        char[] defaultKeys = Move.defaultKeys();
+        char[] defaultKeys = Move.DEFAULT_KEYS;
 
         //when
         char[] navigationKeys = CommandLineAnalyst.checkArgsForNavigationKeys(input);
