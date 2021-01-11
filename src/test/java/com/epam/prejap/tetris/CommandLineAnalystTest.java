@@ -26,8 +26,9 @@ public class CommandLineAnalystTest {
         char[] navigationKeys = CommandLineAnalyst.checkArgsForNavigationKeys(input);
 
         //then
-        assertEquals(navigationKeys, providedKeys, "Navigation keys should have been modified but were not " +
-                "when providing 3 characters separated by spaces within the quotes \" \".");
+        assertEquals(navigationKeys, providedKeys, String.join("\n",
+                "Navigation keys should have been modified but were not",
+                "when providing 3 characters separated by spaces within the quotes \" \"."));
     }
 
     private char[] extractKeysFromInput(String arg0) {
@@ -53,8 +54,8 @@ public class CommandLineAnalystTest {
         char[] navigationKeys = CommandLineAnalyst.checkArgsForNavigationKeys(input);
 
         //then
-        assertEquals(navigationKeys, defaultKeys, "Navigation keys should be default but are not when no argument " +
-                "or blank argument provided.");
+        assertEquals(navigationKeys, defaultKeys,
+                "Navigation keys should be default but are not when no argument or blank argument provided.");
     }
 
     @DataProvider
